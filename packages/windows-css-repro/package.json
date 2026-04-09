@@ -1,0 +1,9 @@
+{
+  "name": "windows-css-repro",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./style.css": "./style.css"
+  }
+}

@@ -1,0 +1,10 @@
+.repro-card {
+  border: 4px solid #0f766e;
+  background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+  color: #134e4a;
+}
+
+.repro-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
