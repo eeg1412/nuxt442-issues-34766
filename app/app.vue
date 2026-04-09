@@ -4,8 +4,8 @@
     <section class="repro-card">
       <h1>Nuxt 4.4.2 Windows CSS @fs Repro</h1>
       <p>
-        This page is wired to load CSS from a local package dependency.
-        On Windows dev mode, Nuxt may inject a malformed stylesheet URL such as
+        This page is wired to load CSS from a local package dependency. On
+        Windows dev mode, Nuxt may inject a malformed stylesheet URL such as
         <code>/@fsD:/...</code>, which then returns 404.
       </p>
 
@@ -14,18 +14,30 @@
         <li>Use a Windows machine.</li>
         <li>Run <code>npm install</code> and then <code>npm run dev</code>.</li>
         <li>Open the local URL printed by Nuxt in the terminal.</li>
-        <li>Open browser DevTools with <code>F12</code> or <code>Ctrl+Shift+I</code>.</li>
-        <li>Check the Console and Network tabs for a stylesheet request containing <code>@fsD:</code>.</li>
+        <li>
+          Open browser DevTools with <code>F12</code> or
+          <code>Ctrl+Shift+I</code>.
+        </li>
+        <li>
+          Check the Console and Network tabs for a stylesheet request containing
+          <code>@fsD:</code>.
+        </li>
       </ol>
 
       <h2>Expected Evidence</h2>
       <ul>
-        <li>A stylesheet request like <code>/_nuxt/@fsD:/.../style.css</code> returns 404.</li>
-        <li>The package styles below do not fully apply when that request fails.</li>
+        <li>
+          A stylesheet request like
+          <code>/_nuxt/@fsD:/.../style.css</code> returns 404.
+        </li>
+        <li>
+          The package styles below do not fully apply when that request fails.
+        </li>
       </ul>
 
       <p class="repro-note">
-        Local package used for the repro: <code>packages/windows-css-repro/style.css</code>
+        Local package used for the repro:
+        <code>packages/windows-css-repro/style.css</code>
       </p>
     </section>
   </main>
@@ -82,7 +94,7 @@ code {
   padding: 0.1rem 0.35rem;
   border-radius: 0.35rem;
   background: #e2e8f0;
-  font-family: "Cascadia Code", Consolas, monospace;
+  font-family: 'Cascadia Code', Consolas, monospace;
   font-size: 0.95em;
 }
 

@@ -45,20 +45,20 @@ npm install
 
 1. Start the Nuxt dev server:
 
-	```bash
-	npm run dev
-	```
+   ```bash
+   npm run dev
+   ```
 
 2. Open the local URL printed in the terminal.
 
 3. Open browser DevTools:
-	- `F12`, or
-	- `Ctrl+Shift+I`
+   - `F12`, or
+   - `Ctrl+Shift+I`
 
 4. Check one of the following:
-	- `Console` tab for stylesheet 404 errors
-	- `Network` tab for requests containing `@fsD:`
-	- `Elements` tab for injected `<link rel="stylesheet">` entries
+   - `Console` tab for stylesheet 404 errors
+   - `Network` tab for requests containing `@fsD:`
+   - `Elements` tab for injected `<link rel="stylesheet">` entries
 
 ## Expected Result
 
@@ -79,7 +79,7 @@ The issue is in `@nuxt/vite-builder`, inside `getManifest()`.
 Current logic:
 
 ```js
-css.add("/@fs" + resolved)
+css.add('/@fs' + resolved)
 ```
 
 On Windows, when `resolved` is shaped like `D:/path/to/style.css`, this becomes:
@@ -91,7 +91,7 @@ On Windows, when `resolved` is shaped like `D:/path/to/style.css`, this becomes:
 ## Suggested Fix
 
 ```js
-css.add("/@fs" + (resolved.startsWith('/') ? resolved : '/' + resolved))
+css.add('/@fs' + (resolved.startsWith('/') ? resolved : '/' + resolved))
 ```
 
 ## Files In This Reproduction
